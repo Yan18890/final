@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adoption - Fremont Cat Rescue</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<body>
+
+  <!-- Header + Navigation -->
+<a class="visually-hidden-focusable position-absolute m-2 p-2 bg-dark text-white rounded" href="#main">Skip to content</a>
+
+<header class="border-bottom">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background:#fac863;">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Fremont Cat Rescue home">
+        <img src="images/logo.jpg" alt="Fremont Cat Rescue logo" class="brand-logo" loading="lazy">
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#primaryNav"
+              aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="primaryNav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+          <li class="nav-item"><a class="nav-link" href="index.html" >Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="donations.html">Donations</a></li>
+          <li class="nav-item"><a class="nav-link" href="adoption.html" aria-current="page">Adoption</a></li>
+          <li class="nav-item"><a class="nav-link" href="volunteer.html">Volunteer</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html" >Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html" >Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html" >About Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <!-- How to Adopt -->
+  <section class="adoption-process" >
+    <h2>How to Adopt</h2>
+    <p>Start by filling out our online adoption form. Once approved, you'll be contacted to schedule a meet-and-greet with our rescue cats.</p>
+    <p>Our team will help match you with the perfect cat based on your lifestyle, experience, and home environment.</p>
+  </section>
+
+  <!-- Adoption Rules -->
+  <section class="adoption-rules" >
+    <h2>Adoption Guidelines</h2>
+    <ul>
+      <li>🏠 Adopters must be 21 years or older.</li>
+      <li>📄 A completed and approved adoption application is required.</li>
+      <li>👪 All household members should agree to the adoption.</li>
+      <li>🐈 Indoor-only homes are required unless noted otherwise.</li>
+      <li>💉 All adopted cats are spayed/neutered, vaccinated, and microchipped.</li>
+      <li>💰 Adoption fee: $120 (covers vet care and supplies)</li>
+    </ul>
+  </section>
+
+
+ <!-- Adoptable Cats -->
+<div class="gallery-flex">
+  <div class="cat-card">
+    <img src="images/cat5.jpg" alt="Milo">
+    <h3>Milo</h3>
+    <p>2 years old | Male | Friendly & playful</p>
+
+  </div>
+  <div class="cat-card">
+    <img src="images/cat7.jpg" alt="Luna">
+    <h3>Luna</h3>
+    <p>1 year old | Female | Gentle & affectionate</p>
+  </div>
+  <div class="cat-card">
+    <img src="images/cat3.jpg" alt="Shadow">
+    <h3>Shadow</h3>
+    <p>3 years old | Male | Quiet & cuddly</p>
+  </div>
+   <div class="cat-card">
+    <img src="images/cat1.jpg" alt="Nimo">
+    <h3>Nimo</h3>
+    <p>2 months old | Male | Friendly & playful</p>
+    
+  </div>
+   <div class="cat-card">
+    <img src="images/cat4.jpg" alt="Tiger">
+    <h3>Tiger</h3>
+    <p>1 years old | Female | Friendly & Quiet</p>
+    
+  </div>
+   <div class="cat-card">
+    <img src="images/cat6.jpg" alt="Miya">
+    <h3>Miya</h3>
+    <p>3 months old | Female | Friendly & playful</p>
+    
+  </div>
+</div>
+ 
+
+
+<section class="adoption-form" style="padding: 30px; background-color: #f9f9f9;">
+  <h2 style="text-align: center;">Adoption Request Form</h2>
+  <form action="#" method="POST" style="max-width: 500px; margin: auto;">
+    <label for="full-name">Full Name:</label><br>
+    <input type="text" id="full-name" name="full-name" required style="width: 100%; padding: 8px;"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required style="width: 100%; padding: 8px;"><br><br>
+
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 8px;"><br><br>
+
+    <label for="cat-name">Which cat are you interested in?</label><br>
+    <input type="text" id="cat-name" name="cat-name" required style="width: 100%; padding: 8px;"><br><br>
+
+    <label for="message">Why do you want to adopt?</label><br>
+    <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 8px;"></textarea><br><br>
+
+    <button type="submit" style="padding: 10px 20px; background: #4CAF50; color: white; font-weight: bold; border: none; border-radius: 5px;">Submit Request</button>
+  </form>
+</section>
+</main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Follow Us</p>
+    <a href="#">Facebook</a> |
+    <a href="#">Instagram</a> |
+    <a href="#">Twitter</a>
+  </footer>
+</body>
+</html>

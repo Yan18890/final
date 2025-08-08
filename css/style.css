@@ -1,0 +1,654 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Typography */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fac863;
+    padding: 5px 15px;  
+}
+
+/* 统一导航外观 */
+.navbar { background: #fac863; }
+.brand-logo { height:80px; width: auto; display: block; } /* 控制 logo 高度 */
+.navbar .nav-link {
+  color: #333;
+  font-weight: 700;
+  padding: .5rem .75rem;
+}
+.navbar .nav-link:hover,
+.navbar a[aria-current="page"] {
+  background: #ffe4a1;
+  border-radius: 4px;
+  color: #333;
+}
+
+/* 修正你原本无效的选择器（删掉这些旧的） */
+/*
+.navbar navbar-expand-lg { ... }                <-- 无效，删
+.navbar-brand d-flex align-items-center img { ... }  <-- 无效，改成 .brand-logo 或 .navbar-brand img
+*/
+
+/* 汉堡图标在浅色背景下可见（已加 navbar-light）；如需更深色图标可覆盖： */
+/* .navbar-light .navbar-toggler-icon { filter: invert(1); } */
+
+/* 其它你原有样式保持不变 … */
+
+
+/* Logo 图片 */
+.logo img {
+    height: 90px;  
+    width: auto;
+    display: block;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 12px; 
+}
+ 
+
+.navbar a:hover {
+    background-color: #ffe4a1;
+    border-radius: 4px;
+}
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    height: 500px;
+}
+
+.hero img,
+.cycle-slideshow img {
+    width: 100%;
+    height: 500px;
+    display: block;
+ 
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-text h1 {
+    font-size: 3em;
+    margin-bottom: 12px;
+}
+
+.hero-text .btn {
+    display: inline-block;
+    background: #ffcc66;
+    color: #333;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.hero-text .btn:hover {
+    background: #ffd98e;
+}
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 2;
+}
+
+.cycle-slideshow {
+    position: relative;
+    z-index: 1;
+}
+
+ 
+/* News */
+.news {
+    background: #fff5e6;
+    margin: 20px auto;
+    padding: 20px;
+    border-left: 5px solid #ffcc66;
+    max-width: 900px;
+}
+
+/* Gallery */
+.cat-gallery {
+    padding: 20px;
+    text-align: center;
+}
+
+.gallery-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.gallery-flex img {
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* 给每张图加 overlay 效果 */
+.gallery-flex img::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.25); /* 黑色半透明遮罩 */
+    border-radius: 10px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+.gallery-flex img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Mission */
+.mission {
+    text-align: center;
+    background: #e8f5e9;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #444;
+    color: #fff;
+}
+
+.footer a {
+    color: #ffcc66;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.5em;
+  }
+  .gallery-flex img {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .hero-text h1 {
+    font-size: 2em;
+  }
+  .gallery-flex img {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero {
+    height: 300px;
+  }
+  .hero img,
+  .cycle-slideshow img {
+    height: 300px;
+  }
+  .hero-text h1 {
+    font-size: 1.5em;
+  }
+  .gallery-flex img {
+    width: 150px;
+  }
+}
+
+/* NEW: 减少动效偏好时，关闭轮播，以首图静态显示 */
+@media (prefers-reduced-motion: reduce) {
+  .cycle-slideshow { display: none; }
+  .hero { background:url('../images/cat-hero0.jpg') center/cover no-repeat; }
+  * { animation: none !important; transition: none !important; }
+}
+.donation-impact {
+  padding: 30px;
+  text-align: center;
+}
+
+.donation-impact ul {
+  line-height: 1.8;
+  display: inline-block; /* 为了让 ul 居中对齐 */
+  text-align: left;      /* 保持列表内容左对齐更清晰 */
+}
+
+.donation-methods {
+  background: #f0f9ff;
+  padding: 30px;
+  text-align: center;
+}
+
+.donation-methods ul {
+  display: inline-block;
+  text-align: left;
+}
+
+
+.donation-form-container {
+  margin-top: 30px;
+}
+
+.donation-form-container form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.donation-form-container label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.donation-form-container input[type="text"],
+.donation-form-container input[type="number"],
+.donation-form-container input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.donation-form-container button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.donation-form-container button:hover {
+  background-color: #45a049;
+}
+
+.donation-form-container h3 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+/* Adoptable Cats Section */
+
+.adoption-process,
+.adoption-rules {
+  padding: 30px;
+  max-width: 800px;         /* 限制内容宽度 */
+  margin: 0 auto;            /* 水平居中 */
+  text-align: center;        /* 让标题和段落居中 */
+}
+
+.adoption-rules {
+  background-color: #f9f9f9;
+}
+
+.adoption-rules ul {
+  line-height: 1.8;
+  text-align: left;          /* 保持列表项目左对齐更易读 */
+  display: inline-block;     /* 让 ul 内容居中而不撑满宽度 */
+  margin: 0 auto;
+  padding-left: 20px;        /* 保持缩进 */
+}
+
+.adoptable-cats .gallery-flex {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.cat-card {
+  width: 220px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.cat-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.cat-card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 20px;
+}
+
+.cat-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Form Styling */
+.adoption-form form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Volunteer Section Layout */
+.volunteer-intro,
+.volunteer-roles,
+.volunteer-signup {
+  padding: 30px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+  line-height: 1.8;
+}
+
+.volunteer-roles {
+  background-color: #f9f9f9;
+}
+
+/* Volunteer Roles List Styling */
+.volunteer-roles ul {
+  list-style-type: none;
+  padding-left: 0;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.volunteer-roles li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.volunteer-roles strong {
+  color: #2a6d93;
+}
+
+/* Volunteer Headings */
+.volunteer-intro h2,
+.volunteer-roles h2,
+.volunteer-signup h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* Email link style */
+.volunteer-signup a {
+  color: #337ab7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.volunteer-signup a:hover {
+  text-decoration: underline;
+}
+/* Contact Info 区块 */
+.contact-info {
+  text-align: center;
+  padding: 30px;
+}
+
+/* Contact Form 样式 */
+.contact-form {
+  background-color: #f9f9f9;
+  padding: 30px;
+}
+
+.contact-form h2 {
+  text-align: center;
+}
+
+.contact-form form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 地图区域样式 */
+.map-section {
+  text-align: center;
+  padding: 30px;
+}
+
+.map-section iframe {
+  width: 90%;
+  max-width: 700px;
+  height: 450px;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* Main section: intro block */
+.resources-main {
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.resources-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.resources-intro p {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Grid Layout */
+.resources-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* 每个资源块 */
+.resource-card {
+  flex: 1 1 calc(50% - 30px);
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.resource-card h3 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.resource-card ul {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.8;
+}
+
+.resource-card li {
+  margin-bottom: 10px;
+}
+
+.resource-card a {
+  color: #336699;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.resource-card a:hover {
+  text-decoration: underline;
+}
+
+/* 响应式：在窄屏下每列变一整行 */
+@media (max-width: 768px) {
+  .resource-card {
+    flex: 1 1 100%;
+  }
+}
+
+ 
+
+.about-main {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+  line-height: 1.8;
+}
+
+.about-intro h2 {
+  font-size: 2.2em;
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.about-main section {
+  margin-bottom: 50px;
+}
+
+.about-main h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  color: #2e6f95;
+}
+
+.about-main ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-main li {
+  margin-bottom: 8px;
+}
+
+.team-photo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.story-photo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* NEW: 当前页高亮 */
+.navbar a[aria-current="page"] {
+  background: #ffe4a1;
+  border-radius: 4px;
+}
+
+/* NEW: Skip link 可见时样式（Bootstrap 已有 visually-hidden-focusable，这里兜底） */
+.visually-hidden-focusable:focus {
+  position: static !important;
+  clip: auto !important;
+  width: auto; height: auto;
+}
+
+/* NEW: 让画廊图片固定为正方形且自适应裁剪 */
+.cat-sq { aspect-ratio: 1 / 1; object-fit: cover; }
+
+/* NEW: Hero 对比度提升 */
+.hero .overlay { background-color: rgba(0,0,0,.45); }
+
+/* NEW: 统一容器层次感 */
+.news { background:#fff5e6; border-left:5px solid #ffcc66; padding:20px; }
+.mission { background:#e8f5e9; }
+
+/* 保留你原有媒体查询 — 已满足“3 个设备断点”要求 */
+
